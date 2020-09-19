@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather App</title>
 
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
     <!--Bootstrap-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -15,12 +18,10 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
           integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
     <!--Keys-->
     <script src="JS/keys.js"></script>
 </head>
 <body>
-
 <!-- Mapbox JS -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
@@ -36,28 +37,39 @@
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
 
-
 <!--Start NavBar-->
 <nav class="navbar">
     <div class="nav-logo">
         <h1>Wishful Weather</h1>
-        <img src="../weather.jpg" class="logo" alt="logo">
-        <div class="d-flex justify-content-center">
-            <div id="geocoder" class="geocoder"></div>
-        </div>
+        <img src="weather.jpg" class="logo" alt="logo">
     </div>
 </nav>
 <!--End NavBar-->
+
+
 <!--Start Main-->
 <main>
-    <!--Start 5 Day Forecast-->
+    <!--Start GeoCoder-->
+    <div class="d-flex justify-content-center">
+        <div id="geocoder" class="geocoder"></div>
+    </div>
+    <!--End Geocoder-->
+
+    <!--Start Current Forecast-->
     <div id="fiveDayForecast"></div>
+    <!--Start Current Forecast-->
+
+
     <!--Start 5 Day Forecast-->
+    <div id="current-weather"></div>
+    <!--End 5 Day Forecast-->
+
     <div class="d-flex justify-content-center my-5">
         <div id='map' class="rounded-lg" style='width: 80%; height: 670px;'></div>
         <pre id="coordinates" class="coordinates"></pre>
     </div>
-    <!--Start 5 Day Forecast-->
+    <!--End 5 Day Forecast-->
+    <script src="weather.js"></script>
 </main>
 <!--End Main-->
 </body>

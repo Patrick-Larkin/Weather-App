@@ -60,63 +60,33 @@ let getForecast = function (latitude, longitude) {
 		exclude: "hourly, minutely",
 		units: "imperial"
 	}).done(function (data) {
-		console.log(data)
 		presentForecast(data)
-		futureForecast(data)
+		// futureForecast(data)
 	}).error(function () {
 		alert('error retrieving forecast');
-	})
+	});
 }
 
 // Single iteration card
 let presentForecast = function (data, i = 0) {
 	// Did dt ever work whats the value log it
-	let dt = '<h1>' + data.daily[i].dt + '</h1>';
-	$('#card').append(dt);
-
-	let tempHTML = '<h3>' + data.daily[i].temp.min + '°f | ' + data.daily[i].temp.max + '°f' + '</h3>';
-	$('#temperature').html(tempHTML);
-
-	let descriptionHTML = '<h4>' + 'Description: ' + data.daily[i].weather[0].description + '</h4>';
-	$('#description').html(descriptionHTML);
-
-	let windHTML = '<h4>' + data.daily[i].wind_speed + 'mp/h' + '</h4>';
-	$('#wind').html(windHTML);
-
-	let popHTML = '<h4>' + data.daily[i].pop + '%' + '</h4>';
-	$('#rain').html(popHTML);
+	console.log(data);
+	let forecastCard = ''
+	forecastCard += `<div class="card bg-secondary text-white p-3">
+    					    <div class="col">
+							      <h5>Today in ${data.name}</h5>
+							      <h3>${data.current.temp}</h3>
+										<img src="http://openweathermap.org/img/w/'${data.current.weather[0].icon}.png">
+								  	<p>Description: ${data.current.weather[0].description}</p>
+										<p>Feels Like: ${data.current.feels_like} &#8457</p>
+									</div>
+								</div>`;
+									// <div class="card d-flex flex-column justify-content-center bg-secondary text-white p-3">
+									//   <p>Low: ${data.current.temp} &#8457</p>
+									//   <p>High: ${data.main.temp_max}&#8457</p>
+									//   <p>Humidity: ${data.main.humidity}%</p>
+									//   <p>Pressure: ${data.main.pressure}mb</p>
+									// </div>`;
+	return forecastCard;
 }
-
-// let futureForecast = function (data) {
-// 	var card = $('cardContainer')
-// 	data.daily.forEach(function (i) {
-// 		card.append('<h3>' + 'AAAAAAAAA' + '</h3>')
-// 	})
-// }
-
-
-// Future iteration card attempt #5
-let futureForecast = function (data) {
-	// 	// Did dt ever work whats the value log it
-	// 	// let dt = '<h1>' + data.daily[i].dt + '</h1>';
-	// 	// $('#card').append(dt);
-	for (let i = 0; i < data.daily.length; i++) {
-		const createCard = document.createElement('div')
-
-		$("#cardContainer").append('<h3>' + data.daily[i].temp.min + '°f | ' + data.daily[i].temp.max + '°f' + '</h3>');
-		$("#cardContainer").append('<h4>' + 'Description: ' + data.daily[i].weather[0].description + '</h4>');
-		$("#cardContainer").append('<h4>' + data.daily[i].wind_speed + 'mp/h' + '</h4>');
-		$("#cardContainer").append('<h4>' + data.daily[i].pop + '%' + '</h4>');
-	}
-}
-
-// })
-// }
-
-
-// Experimental #2
-// data.daily.forEach(function (i) {
-// let cardContent ='<div class="card">' + '<div id="description"></div>' + '<div id="humidity"></div>' + '<div id="wind"></div>' + '<div id="pressure"></div>' + '</div>';
-// $('#cardContainer').append(cardContent);
-// })
-// End Loop
+$('#current-weather').innerHTML(forecastCard)
