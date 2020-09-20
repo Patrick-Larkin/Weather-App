@@ -5,7 +5,6 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-
 body {
     padding: 0;
     margin: 0;
@@ -40,13 +39,6 @@ body {
     margin-left: 4.5em;
     margin-top: 1em;
     width: 100px;
-}
-
-/*Map CSS*/
-#map {
-    /* the width and height may be set to any size */
-    width: 100%;
-    height: 700px;
 }
 
 /*Weather Cards CSS*/
@@ -90,4 +82,31 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
 
+.geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 10px;
+}
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+#map {
+    margin-top: 75px;
+}
