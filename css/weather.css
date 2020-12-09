@@ -1,0 +1,143 @@
+/*Misc and Global*/
+html {
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+}
+
+body {
+    color: #fff;
+    overflow-x: hidden;
+    height: 100%;
+    background-color:  #01BEFE;
+    background-repeat: no-repeat;
+    overflow: no-display;
+}
+
+#background {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.large-font {
+    font-size: 70px;
+    font-family: Arial;
+}
+
+
+/*NavBar*/
+nav {
+    display: flex;
+    justify-content: center;
+}
+.navbar {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+.logo{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+
+/*Map*/
+#map {
+    width: 800px;
+    height: 500px
+    border-radius: 15px;
+}
+
+/*Weather Forecast*/
+.weather-container {
+    width: 95%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #FFDD00;
+}
+
+.search-container {
+    background-color: #FFDD00;
+}
+
+input {
+    background-color: #FFDD00;
+    padding: 24px 0px 12px 0px !important;
+    width: 80%;
+    box-sizing: border-box;
+    border: none !important;
+    border-bottom: 1px solid #CFD8DC !important;
+    font-size: 16px !important;
+    color: #8F00FF !important
+}
+
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #fff !important;
+    outline-width: 0;
+    font-weight: 400
+}
+
+::placeholder {
+    color: #8F00FF !important;
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: #8F00FF !important
+}
+
+::-ms-input-placeholder {
+    color: #8F00FF !important
+}
+
+.fa-search {
+    color: #8F00FF;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 20px 0 0 0;
+    width: 20%;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+
+.icon-container {
+    padding: 0 20px 30px 50px;
+}
+
+.fa-sun-o {
+    font-size: 22px
+}
+
+.text-color {
+    color: #8F00FF
+}
+
+.suggestion:hover {
+    color: #8F00FF;
+    cursor: pointer
+}
+
+@media screen and (max-width: 500px) {
+    .card1 {
+        padding-left: 26px
+    }
+}
+
+
+
+/*Detailed forecast*/
+.dayOfTheWeek p {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.dayOfTheWeek {
+    display: flex;
+    justify-content: space-between;
+}
